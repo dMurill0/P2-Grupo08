@@ -19,12 +19,12 @@ public class Usuario {
     private String email;
     private ArrayList<String> notificaciones;
  
+    
     public void recibirNotificacion(String notificacion){
         notificaciones.add(notificacion);
     }
 
     public ArrayList<String> getNotificaciones() {
         return notificaciones;
-    }
-    
+    }    
 }

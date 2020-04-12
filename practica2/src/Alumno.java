@@ -8,6 +8,6 @@
  *
  * @author celia
  */
-public class Alumno {
+public class Alumno{
     
 }
