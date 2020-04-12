@@ -8,7 +8,7 @@
  *
  * @author celia
  */
-public class practica2 {
+public class Demostrador {
 
     /**
      * @param args the command line arguments
