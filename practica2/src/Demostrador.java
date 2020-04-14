@@ -1,20 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author celia
- */
 public class Demostrador {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        System.out.println("cosas");
+        System.out.println("****** Práctica 2 - Grupo 8 - AIR ******");
+        System.out.println("Inicio del Sistema...");
+        Sistema sistema = new Sistema();
+        System.out.println("Sistema iniciado correctamente.");
+        System.out.println("Inicio de sesión con Usuario No registrado...");
+        System.out.println("");
+        System.out.println("");
     }
     
 }
