@@ -1,6 +1,7 @@
 package modelo;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  *
  * @author celia
  */
-public class Subforo implements Subject{
+public class Subforo implements Subject, Serializable{
     private String titulo;
     private ArrayList<Usuario> alUsuarios;
     private ArrayList<Entrada> alEntradas;
@@ -26,6 +27,8 @@ public class Subforo implements Subject{
     public void anadirSubscriptor(Usuario subs) {
         //Añadir un usuario a un subforo en la BD
         alUsuarios.add(subs);
+        
+        Sistema aux = Sistema.getSistema();
     }
        
      //???
@@ -40,7 +43,5 @@ public class Subforo implements Subject{
         for (Usuario usuario: alUsuarios){
             usuario.recibirNotificacion("Se realizó un cambio en el Subforo: " + this.titulo);
         }
-    }
-    
-   
+    }   
 }
