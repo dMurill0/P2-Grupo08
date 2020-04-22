@@ -19,6 +19,7 @@ public class Usuario {
     private String apellidos;
     private String contraseña;
     private String email;
+    private String rol; //indicar en la creacion de usuario si es alumno,profesor o admin y comparar con equalsIgnoreCase
     private ArrayList<String> notificaciones;
  
     
