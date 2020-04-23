@@ -1,11 +1,13 @@
 package modelo;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class Encuesta {
+public class Encuesta extends Entrada{
 
-    private List<String> respuestas;
+    private ArrayList<String> respuestas;
 
-    
+    public Encuesta(String titulo, String texto){
+        super(titulo, texto);
+    }
     
 }
