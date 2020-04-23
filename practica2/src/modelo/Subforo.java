@@ -1,47 +1,58 @@
 package modelo;
 
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import javax.sound.sampled.SourceDataLine;
 
-/**
- *
- * @author celia
- */
-public class Subforo implements Subject, Serializable{
+public class Subforo implements Subject, Serializable {
+    private int id;
     private String titulo;
     private ArrayList<Usuario> alUsuarios;
     private ArrayList<Entrada> alEntradas;
-    
-    public Subforo(String titulo){
+
+    public Subforo(String titulo) {
         this.titulo = titulo;
     }
-     //???
+
     @Override
-    public void anadirSubscriptor(Usuario subs) {
-        //Añadir un usuario a un subforo en la BD
-        alUsuarios.add(subs);
-        
-        Sistema aux = Sistema.getSistema();
+    public boolean anadirSubscriptor(Usuario subs) {
+        boolean añadido = false;
+        for (int i = 0; i < this.alUsuarios.size(); i++) {
+            if (this.alUsuarios.get(i).getId() == subs.getId()){
+                System.out.println("Este usuario ya es un subscriptor");
+                añadido = false;}
+            else{
+                alUsuarios.add(subs);
+                añadido = true;
+            }
+        }
+        return añadido;
+       // Sistema aux = Sistema.getSistema();
     }
-       
-     //???
-    @Override
-    public void eliminarSubscriptor(Usuario subs) {
-        //Eliminar un usuario a un subforo en la BD
-        alUsuarios.remove(subs);
-    }
+
     
     @Override
-    public void notificar() {
-        for (Usuario usuario: alUsuarios){
-            usuario.recibirNotificacion("Se realizó un cambio en el Subforo: " + this.titulo);
+    public boolean eliminarSubscriptor(Usuario subs) {
+        boolean borrar = false;
+        for (int i = 0; i < this.alUsuarios.size(); i++) {
+            if (this.alUsuarios.get(i).getId() == subs.getId()){
+                System.out.println("Subscriptor eliminado");
+                borrar = true;}
+            else{
+                alUsuarios.remove(subs);
+                System.out.println("Este usuario no era un subscriptor");
+                borrar = false;
+            }
         }
-    }   
+        return borrar;
+       
+    }
+
+    @Override
+    public void notificar() {
+        for (Usuario usuario : alUsuarios) {
+            usuario.recibirNotificaciones("Se realizó un cambio en el Subforo: " + this.titulo);
+        }
+    }
 }
