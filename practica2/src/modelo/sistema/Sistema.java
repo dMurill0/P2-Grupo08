@@ -1,5 +1,4 @@
-package modelo;
-
+package modelo.sistema;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,6 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import modelo.usuario.Usuario;
 
 public class Sistema implements Serializable{
     private static final String NOMBRE_BD = "P2_Grupo8_BD.mp";
@@ -21,7 +22,7 @@ public class Sistema implements Serializable{
     /**
      * CONSTRUCTOR. Inicializa ArrayList<Usuario> y ArrayList<Subforo>
      */
-    private Sistema (){
+    public Sistema (){
         alUsuarios = new ArrayList<Usuario>();
         alSubforos = new ArrayList<Subforo>();
     }
@@ -94,6 +95,7 @@ public class Sistema implements Serializable{
             oos.writeObject(sistema);
             oos.close();
             fos.close();
+            System.out.println("Datos guardados correctamente");
             return true;
             
         } catch (FileNotFoundException ex) {
@@ -139,13 +141,13 @@ public class Sistema implements Serializable{
     }
     
     //???
-    public ArrayList<Entrada> getEntradasMasVotadas(){
+   /*  public ArrayList<Entrada> getEntradasMasVotadas(){
         ArrayList<Entrada> alEntradasMasVotadas = null;
         //Consultar en la BD
         
         
         return alEntradasMasVotadas;
-    }
+    } */
     
     /**
      * Permite crear un Subforo nuevo y añadirlo a la BD.

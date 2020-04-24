@@ -1,4 +1,4 @@
-package modelo;
+package modelo.entradas;
 
 
 public class Comentario {

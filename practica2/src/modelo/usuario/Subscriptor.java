@@ -1,4 +1,4 @@
-package modelo;
+package modelo.usuario;
 
 public interface Subscriptor{
 

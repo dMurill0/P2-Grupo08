@@ -1,4 +1,4 @@
-package modelo;
+package modelo.entradas;
 
 public class Entrada extends EntradaGenerica{
     
@@ -34,10 +34,10 @@ public class Entrada extends EntradaGenerica{
     }
     @Override
     public boolean comentar(String texto){
-        
+        return true;
     }
     @Override
     public boolean votar(int valor){
-        
+        return true;
     }
 }

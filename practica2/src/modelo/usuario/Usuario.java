@@ -1,11 +1,10 @@
-package modelo;
+package modelo.usuario;
 
 
 import java.util.ArrayList;
 
 
 public class Usuario implements Subscriptor{
-    private int id;
     private String nombre ;
     private String apellidos;
     private String nick;
@@ -29,9 +28,6 @@ public class Usuario implements Subscriptor{
         return notificaciones;
     }
 
-    public int getId(){
-        return this.id;
-    }
 
     public String getNick() {
         return nick;
@@ -53,6 +49,14 @@ public class Usuario implements Subscriptor{
     public void recibirNotificaciones(String notificacion) {
         notificaciones.add(notificacion);
 
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     

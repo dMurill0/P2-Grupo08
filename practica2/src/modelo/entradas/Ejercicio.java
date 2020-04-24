@@ -1,4 +1,4 @@
-package modelo;
+package modelo.entradas;
 
 public class Ejercicio extends Entrada{
 
@@ -7,4 +7,5 @@ public class Ejercicio extends Entrada{
     public Ejercicio(String titulo, String texto){
         super(titulo, texto);
     }
+    
 }
