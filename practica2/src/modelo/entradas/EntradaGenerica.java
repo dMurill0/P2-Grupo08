@@ -11,6 +11,9 @@ public abstract class EntradaGenerica{
         this.texto = texto;
     }
     
+    
+    abstract public String getTitulo();
+    abstract public String getTexto();
     abstract public int getPuntuacion();
     abstract public void setPuntuacion(int puntuacion);
     abstract public void verificar(boolean resultado);

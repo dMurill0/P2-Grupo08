@@ -1,12 +1,24 @@
 package modelo.entradas;
 
+import modelo.sistema.Subforo;
+import modelo.usuario.Administrador;
+
 public class Entrada extends EntradaGenerica{
     
+    Administrador administrador;
+    public void crearEntrada(Subforo subforo, String titulo, String texto){
+        
+        Entrada entrada = new Entrada(titulo,texto);
+        
+        boolean publicar = administrador.verificarEntrada(entrada);
+        
+    }
     
     public Entrada(String titulo, String texto){
         super(titulo, texto);
     }
     
+    @Override
     public String getTitulo(){
         return titulo;
     }
@@ -14,12 +26,14 @@ public class Entrada extends EntradaGenerica{
         this.titulo = titulo;
     }
     
+    @Override
     public String getTexto(){
         return texto;
     }
     public void setTexto(String texto){
         this.texto = texto;
     }
+    
     
     @Override
     public int getPuntuacion(){

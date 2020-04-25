@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import modelo.Suscriptor;
 import modelo.entradas.Entrada;
 import modelo.entradas.EntradaGenerica;
+import modelo.sistema.Penalizacion;
 import modelo.sistema.Sistema;
 import modelo.sistema.Subforo;
 
 
 public class Usuario implements Suscriptor{
+    
+    
     
     private Entrada entrada;
     private Sistema sistema;
@@ -36,8 +39,6 @@ public class Usuario implements Suscriptor{
         this.nick = nick;
         this.contraseña = contraseña;
         this.email = email;
-        this.rol = rol;
-        this.notificaciones = notificaciones;
     }
 
     public void crearEntrada(Subforo subforo,Usuario usuario, EntradaGenerica entrada){
@@ -53,8 +54,6 @@ public class Usuario implements Suscriptor{
             //Se crea la entrada con su texto
 //        } 
     }
-    
-    
     
     public void votarEntrada(EntradaGenerica entrada, int puntuacion){
         entrada.setPuntuacion(puntuacion);
@@ -86,7 +85,7 @@ public class Usuario implements Suscriptor{
 
     @Override
     public void recibirNotificacion(String notificacion) {
-        notificaciones.add(notificacion);
+        this.notificaciones.add(notificacion);
     }
 
     
