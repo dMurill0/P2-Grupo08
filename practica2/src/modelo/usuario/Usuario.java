@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import modelo.Suscriptor;
 import modelo.entradas.Entrada;
 import modelo.entradas.EntradaGenerica;
-import modelo.sistema.Penalizacion;
 import modelo.sistema.Sistema;
 import modelo.sistema.Subforo;
 

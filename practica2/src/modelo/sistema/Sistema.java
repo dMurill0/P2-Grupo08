@@ -1,4 +1,4 @@
-package modelo.sistema;
+xpackage modelo.sistema;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -144,8 +144,7 @@ public class Sistema implements Serializable{
    /*  public ArrayList<Entrada> getEntradasMasVotadas(){
         ArrayList<Entrada> alEntradasMasVotadas = null;
         //Consultar en la BD
-        
-        
+          
         return alEntradasMasVotadas;
     } */
     
