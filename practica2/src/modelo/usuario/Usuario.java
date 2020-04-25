@@ -4,10 +4,13 @@ package modelo.usuario;
 import java.util.ArrayList;
 import modelo.Suscriptor;
 import modelo.entradas.Entrada;
+import modelo.entradas.EntradaGenerica;
 import modelo.sistema.Sistema;
+import modelo.sistema.Subforo;
 
 
 public class Usuario implements Suscriptor{
+    
     private Entrada entrada;
     private Sistema sistema;
     private String nombre ;
@@ -37,12 +40,24 @@ public class Usuario implements Suscriptor{
         this.notificaciones = notificaciones;
     }
 
-    public void crearEntrada(Usuario usuario, Entrada entrada){
+    public void crearEntrada(Subforo subforo,Usuario usuario, EntradaGenerica entrada){
+        
 //        if(entrada.crearEntrada()){
             //Se crea la entrada con su texto
-//        }
+//        } 
+    }
+    
+    public void crearComentario(Usuario usuario, EntradaGenerica entrada){
         
-        
+//        if(entrada.crearEntrada()){
+            //Se crea la entrada con su texto
+//        } 
+    }
+    
+    
+    
+    public void votarEntrada(EntradaGenerica entrada, int puntuacion){
+        entrada.setPuntuacion(puntuacion);
     }
     
     public String getNick() {
