@@ -9,7 +9,6 @@ public class Alumno extends Usuario{
     }
 
     private boolean tienePenalizacion;
-    //Hola caracola
 
     //establecer fecha de la penalizacion y sumarle dos dia(fin del ban) luego comparar esa fecha en estaPenalizado
     public boolean penalizar(){
