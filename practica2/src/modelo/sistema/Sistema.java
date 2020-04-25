@@ -8,6 +8,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import modelo.entradas.Entrada;
 import modelo.usuario.Alumno;
 import modelo.usuario.Profesor;
 
@@ -39,8 +42,13 @@ public class Sistema implements Serializable{
     public boolean login(String nick, String password){
         for (Usuario usuario : alUsuarios){
             if ((usuario.getNick().equals(nick)) && (usuario.getPassword().equals(password))){
-                usuarioConectado = usuario;
-                return true;
+                if (usuario instanceof Alumno){
+                    Alumno alumno = (Alumno) usuario;
+                    if (!alumno.estaPenalizado()){
+                        usuarioConectado = usuario;
+                        return true;
+                    }   
+                }
             }
         }
         return false;
@@ -155,12 +163,16 @@ public class Sistema implements Serializable{
     }
     
     //???
-   /*  public ArrayList<Entrada> getEntradasMasVotadas(){
+    public ArrayList<Entrada> getEntradasMasVotadas(){
         ArrayList<Entrada> alEntradasMasVotadas = null;
-        //Consultar en la BD
-          
+        for (Subforo subforo : alSubforos){
+            ArrayList<Entrada> aux = new ArrayList<Entrada>();
+            for (Entrada entrada : aux){
+                alEntradasMasVotadas.add(entrada);
+            }
+        }
         return alEntradasMasVotadas;
-    } */
+    }
     
     /**
      * Permite crear un Subforo nuevo y añadirlo a la BD.
@@ -169,11 +181,11 @@ public class Sistema implements Serializable{
      * @return Devuelve True si la operación se realizó correctamente, False en
      *  caso contrario.
      */
-    public boolean crearSubforo(String titulo){
+    public Subforo crearSubforo(String titulo){
         Subforo subforo = new Subforo(titulo);
         alSubforos.add(subforo);
         guardarSistema();
-        return true;
+        return subforo;
     }
     
     /************* Getters and Setter *************/
