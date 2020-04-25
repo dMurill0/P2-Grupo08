@@ -8,6 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import modelo.usuario.Alumno;
+import modelo.usuario.Profesor;
 
 import modelo.usuario.Usuario;
 
@@ -117,14 +119,22 @@ public class Sistema implements Serializable{
      * @return Devuelve True si el registro se realizó correctamente, False en
      *  caso contrario.
      */
-    public boolean registrarUsuario(String nombre, String apellidos, String nick, 
+    public int registrarUsuario(String nombre, String apellidos, String nick, 
             String password, String email){
-        if (perteneceURJC(email)){
-            Usuario usuario = new Usuario(nombre, apellidos, nick, password, email);
-            alUsuarios.add(usuario);
+        int aux = perteneceURJC(email);
+        if (aux==0){
+            Alumno alumno = new Alumno(nombre, apellidos, nick, password, email);
+            alUsuarios.add(alumno);
             guardarSistema();
-            return true;   
-        } else return false;
+            return 0;
+        } else if (aux==1){
+            Profesor profesor = new Profesor(nombre, apellidos, nick, password, email);
+            alUsuarios.add(profesor);
+            guardarSistema();
+            return 1;
+        } else {
+            return -1;
+        }
     }
     
     /**
@@ -134,10 +144,12 @@ public class Sistema implements Serializable{
      * @param email Email a comprobar.
      * @return Devuelve True si el correo pertenece a la URJC.
      */
-    public boolean perteneceURJC(String email){
+    public int perteneceURJC(String email){
         //Dado que no se tiene acceso a la BD de la URJC, la comprobación se hará
         //  a partir del dominio del correo.
-        return (email.contains("@urjc.es") || email.contains("@alumnos.urjc.es"));
+        if (email.contains("@alumnos.urjc.es")) { return 0; }
+        else if (email.contains("@urjc.es")) { return 1; }
+        else return -1;
     }
     
     //???
