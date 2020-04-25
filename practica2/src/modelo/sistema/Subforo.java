@@ -4,13 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import modelo.entradas.Entrada;
+import modelo.entradas.EntradaGenerica;
 import modelo.usuario.Usuario;
 
 public class Subforo implements Subject, Serializable {
     private int id;
     private String titulo;
     private ArrayList<Usuario> alUsuarios;
-    private ArrayList<Entrada> alEntradas;
+    private ArrayList<EntradaGenerica> alEntradas;
 
     public Subforo(String titulo) {
         this.titulo = titulo;
@@ -24,12 +25,12 @@ public class Subforo implements Subject, Serializable {
         this.alUsuarios = alUsuarios;
     }
 
-    public ArrayList<Entrada> getAlEntradas() {
+    public ArrayList<EntradaGenerica> getAlEntradas() {
         return alEntradas;
     }
-
-    public void setAlEntradas(ArrayList<Entrada> alEntradas) {
-        this.alEntradas = alEntradas;
+    //Este metodo no deberia hacer un append al array de entradas????
+    public void setAlEntradas(EntradaGenerica entrada){
+        this.alEntradas.add(entrada);
     }
     
     

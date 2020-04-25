@@ -8,17 +8,16 @@ import modelo.entradas.EntradaGenerica;
 import modelo.sistema.Subforo;
 
 
-public class Usuario implements Suscriptor{
-   
+public abstract class Usuario implements Suscriptor{
     
-    private Entrada entrada;
-    private String nombre ;
-    private String apellidos;
-    private String nick;
-    private String contraseña;
-    private String email;
-    private String rol; //indicar en la creacion de usuario si es alumno,profesor o admin y comparar con equalsIgnoreCase
-    private ArrayList<String> notificaciones;
+    protected Entrada entrada;
+    protected String nombre;
+    protected String apellidos;
+    protected String nick;
+    protected String contraseña;
+    protected String email;
+    protected String rol; //indicar en la creacion de usuario si es alumno,profesor o admin y comparar con equalsIgnoreCase
+    protected ArrayList<String> notificaciones;
 
     public String getEmail() {
         return email;
@@ -28,7 +27,6 @@ public class Usuario implements Suscriptor{
         this.email = email;
     }
 
-    
     public Usuario(String nombre, String apellidos, String nick, String contraseña, String email) {
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -37,6 +35,27 @@ public class Usuario implements Suscriptor{
         this.email = email;
     }
 
+//    public abstract void crearEntrada(Subforo subforo);
+//    
+//    public abstract void crearComentario(Usuario usuario, EntradaGenerica entrada);
+//    
+//    public abstract void votarEntrada(EntradaGenerica entrada, int puntuacion);
+//    
+//    public abstract String getNick();
+//
+//    public abstract void setNick(String nick);
+//
+//    public abstract String getPassword();
+//
+//    public abstract void setPassword(String contraseña);
+//
+//    public abstract String getRol();
+//
+//    public abstract void setRol(String rol);
+//
+//    public abstract void recibirNotificacion(String notificacion);
+//
+//}
     public void crearEntrada(Subforo subforo){
         
     }
@@ -80,6 +99,4 @@ public class Usuario implements Suscriptor{
     public void recibirNotificacion(String notificacion) {
         this.notificaciones.add(notificacion);
     }
-
-    
 }
