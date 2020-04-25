@@ -119,21 +119,23 @@ public class Sistema implements Serializable{
      * @return Devuelve True si el registro se realizó correctamente, False en
      *  caso contrario.
      */
-    public int registrarUsuario(String nombre, String apellidos, String nick, 
+    public boolean registrarUsuario(String nombre, String apellidos, String nick, 
             String password, String email){
         int aux = perteneceURJC(email);
         if (aux==0){
             Alumno alumno = new Alumno(nombre, apellidos, nick, password, email);
             alUsuarios.add(alumno);
+            usuarioConectado = alumno;
             guardarSistema();
-            return 0;
+            return true;
         } else if (aux==1){
             Profesor profesor = new Profesor(nombre, apellidos, nick, password, email);
             alUsuarios.add(profesor);
+            usuarioConectado = profesor;
             guardarSistema();
-            return 1;
+            return true;
         } else {
-            return -1;
+            return false;
         }
     }
     
@@ -144,7 +146,7 @@ public class Sistema implements Serializable{
      * @param email Email a comprobar.
      * @return Devuelve True si el correo pertenece a la URJC.
      */
-    public int perteneceURJC(String email){
+    private int perteneceURJC(String email){
         //Dado que no se tiene acceso a la BD de la URJC, la comprobación se hará
         //  a partir del dominio del correo.
         if (email.contains("@alumnos.urjc.es")) { return 0; }
