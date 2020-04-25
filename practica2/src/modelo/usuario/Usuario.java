@@ -5,16 +5,13 @@ import java.util.ArrayList;
 import modelo.Suscriptor;
 import modelo.entradas.Entrada;
 import modelo.entradas.EntradaGenerica;
-import modelo.sistema.Sistema;
 import modelo.sistema.Subforo;
 
 
 public class Usuario implements Suscriptor{
-    
-    
+   
     
     private Entrada entrada;
-    private Sistema sistema;
     private String nombre ;
     private String apellidos;
     private String nick;
@@ -40,11 +37,8 @@ public class Usuario implements Suscriptor{
         this.email = email;
     }
 
-    public void crearEntrada(Subforo subforo,Usuario usuario, EntradaGenerica entrada){
+    public void crearEntrada(Subforo subforo){
         
-//        if(entrada.crearEntrada()){
-            //Se crea la entrada con su texto
-//        } 
     }
     
     public void crearComentario(Usuario usuario, EntradaGenerica entrada){

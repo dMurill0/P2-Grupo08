@@ -1,5 +1,6 @@
 package modelo.usuario;
 
+import java.util.Scanner;
 import modelo.entradas.EntradaGenerica;
 
 
@@ -10,15 +11,14 @@ public class Administrador extends Usuario{
     }
     
     public boolean verificarEntrada(EntradaGenerica entrada){
-        System.out.println("¿Desea verificar la entrada?");
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("¿Desea verificar la entrada? Y/N");
         System.out.println("Titulo: "+ entrada.getTitulo());
         System.out.println("Texto : "+ entrada.getTexto());
-        //Input
-        String input = "yes";
-        if(input == "yes"){
-            return true;
-        }else{
-            return false;
-        }
+        
+        String input = myObj.nextLine();
+        
+        return input.equals("Y"); 
     }
+    
 }
