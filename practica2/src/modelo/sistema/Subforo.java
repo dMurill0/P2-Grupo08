@@ -3,8 +3,6 @@ package modelo.sistema;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import javax.sound.sampled.SourceDataLine;
-
 import modelo.entradas.Entrada;
 import modelo.usuario.Usuario;
 
@@ -18,6 +16,23 @@ public class Subforo implements Subject, Serializable {
         this.titulo = titulo;
     }
 
+    public ArrayList<Usuario> getAlUsuarios() {
+        return alUsuarios;
+    }
+
+    public void setAlUsuarios(ArrayList<Usuario> alUsuarios) {
+        this.alUsuarios = alUsuarios;
+    }
+
+    public ArrayList<Entrada> getAlEntradas() {
+        return alEntradas;
+    }
+
+    public void setAlEntradas(ArrayList<Entrada> alEntradas) {
+        this.alEntradas = alEntradas;
+    }
+    
+    
     @Override
     public boolean anadirSubscriptor(Usuario subs) {
         boolean añadido = false;
@@ -54,7 +69,7 @@ public class Subforo implements Subject, Serializable {
     @Override
     public void notificar() {
         for (Usuario usuario : alUsuarios) {
-            usuario.recibirNotificaciones("Se realizó un cambio en el Subforo: " + this.titulo);
+            usuario.recibirNotificacion("Se realizó un cambio en el Subforo: " + this.titulo);
         }
     }
 

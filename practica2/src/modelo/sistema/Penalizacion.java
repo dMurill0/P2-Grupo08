@@ -1,12 +1,26 @@
 package modelo.sistema;
-import java.util.Date;
+
+import java.util.Calendar;
 
 
 public class Penalizacion{
     
-    private Date fechaInicio;
-    private Date fechaFinalizacion;
+    private Calendar fechaInicio;
+    private Calendar fechaFinalizacion;
 
+    public Calendar getFechaInicio() {
+        return fechaInicio;
+    }
 
-    
+    public void setFechaInicio(Calendar fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public Calendar getFechaFinalizacion() {
+        return fechaFinalizacion;
+    }
+
+    public void setFechaFinalizacion(Calendar fechaFinalizacion) {
+        this.fechaFinalizacion = fechaFinalizacion;
+    }
 }

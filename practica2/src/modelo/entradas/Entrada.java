@@ -2,6 +2,7 @@ package modelo.entradas;
 
 public class Entrada extends EntradaGenerica{
     
+    
     public Entrada(String titulo, String texto){
         super(titulo, texto);
     }

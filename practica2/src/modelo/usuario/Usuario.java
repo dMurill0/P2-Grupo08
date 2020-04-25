@@ -2,9 +2,14 @@ package modelo.usuario;
 
 
 import java.util.ArrayList;
+import modelo.Suscriptor;
+import modelo.entradas.Entrada;
+import modelo.sistema.Sistema;
 
 
-public class Usuario implements Subscriptor{
+public class Usuario implements Suscriptor{
+    private Entrada entrada;
+    private Sistema sistema;
     private String nombre ;
     private String apellidos;
     private String nick;
@@ -13,6 +18,15 @@ public class Usuario implements Subscriptor{
     private String rol; //indicar en la creacion de usuario si es alumno,profesor o admin y comparar con equalsIgnoreCase
     private ArrayList<String> notificaciones;
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    
     public Usuario(String nombre, String apellidos, String nick, String contraseña, String email) {
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -22,13 +36,15 @@ public class Usuario implements Subscriptor{
         this.rol = rol;
         this.notificaciones = notificaciones;
     }
-    
-   
-    public ArrayList<String> getNotificaciones() {
-        return notificaciones;
+
+    public void crearEntrada(Usuario usuario, Entrada entrada){
+//        if(entrada.crearEntrada()){
+            //Se crea la entrada con su texto
+//        }
+        
+        
     }
-
-
+    
     public String getNick() {
         return nick;
     }
@@ -45,18 +61,17 @@ public class Usuario implements Subscriptor{
         this.contraseña = contraseña;
     }
 
-    @Override
-    public void recibirNotificaciones(String notificacion) {
-        notificaciones.add(notificacion);
-
-    }
-
     public String getRol() {
         return rol;
     }
 
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    @Override
+    public void recibirNotificacion(String notificacion) {
+        notificaciones.add(notificacion);
     }
 
     

@@ -7,7 +7,9 @@ public class Profesor extends Usuario {
 
     public Profesor(String nombre, String apellidos, String nick, String contraseña, String email) {
         super(nombre, apellidos, nick, contraseña, email);
+        super.setRol("profesor");
     }
+    
     
     public void crearEncuesta(String titulo, String texto){
         Encuesta encuesta = new Encuesta(titulo,texto);

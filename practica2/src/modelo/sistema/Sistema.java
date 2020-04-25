@@ -134,7 +134,7 @@ public class Sistema implements Serializable{
      * @param email Email a comprobar.
      * @return Devuelve True si el correo pertenece a la URJC.
      */
-    private boolean perteneceURJC(String email){
+    public boolean perteneceURJC(String email){
         //Dado que no se tiene acceso a la BD de la URJC, la comprobación se hará
         //  a partir del dominio del correo.
         return (email.contains("@urjc.es") || email.contains("@alumnos.urjc.es"));
