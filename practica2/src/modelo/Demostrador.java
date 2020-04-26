@@ -101,7 +101,7 @@ public class Demostrador {
         comentario.setPuntuacion(usuario2); // SE METERIA EN LA LISTA DE USUARIOS QUE LE HAN DAO LIKE
         System.out.println("El mismo usuario puntua un comentario negativamente");
         comentario.setPuntuacion(usuario2); // SE SALDRIA DE LA LISTA DE USUARIOS QUE LE HAN DAO LIKE
-
+//ok
 
 
 
