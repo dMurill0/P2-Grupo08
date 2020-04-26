@@ -9,6 +9,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import modelo.entradas.Entrada;
 import modelo.usuario.Alumno;
@@ -27,7 +29,7 @@ public class Sistema implements Serializable{
     /**
      * CONSTRUCTOR. Inicializa ArrayList<Usuario> y ArrayList<Subforo>
      */
-    public Sistema (){
+    private Sistema (){
         alUsuarios = new ArrayList<Usuario>();
         alSubforos = new ArrayList<Subforo>();
     }
@@ -46,6 +48,7 @@ public class Sistema implements Serializable{
                     Alumno alumno = (Alumno) usuario;
                     if (!alumno.estaPenalizado()){
                         usuarioConectado = usuario;
+                        usuarioConectado.mostrarNotificaciones();
                         return true;
                     }   
                 }
@@ -64,7 +67,8 @@ public class Sistema implements Serializable{
     public boolean logout(){
         if (usuarioConectado!=null)
             usuarioConectado=null;
-         return true;
+        guardarSistema();
+        return true;
     }
     
     /**
@@ -77,8 +81,8 @@ public class Sistema implements Serializable{
             FileInputStream fis = new FileInputStream(NOMBRE_BD);
             ObjectInputStream ois = new ObjectInputStream(fis);
             sistema = (Sistema) ois.readObject();
-            //alUsuarios = sistema.getUsuarios();
-            //alSubforos = sistema.getSubforos();
+            alUsuarios = sistema.getUsuarios();
+            alSubforos = sistema.getSubforos();
             
             ois.close();
             fis.close();
@@ -168,9 +172,18 @@ public class Sistema implements Serializable{
         for (Subforo subforo : alSubforos){
             ArrayList<Entrada> aux = new ArrayList<Entrada>();
             for (Entrada entrada : aux){
-                alEntradasMasVotadas.add(entrada);
+                if (entrada.getVerificada()) alEntradasMasVotadas.add(entrada);
             }
         }
+        
+        Collections.sort(alEntradasMasVotadas, new Comparator<Entrada>(){
+            @Override
+            public int compare(Entrada e1, Entrada e2) {
+                return new Integer(e2.getPuntuacion()).compareTo(new Integer(e1.getPuntuacion()));
+            }
+            
+        });
+        
         return alEntradasMasVotadas;
     }
     
@@ -195,7 +208,10 @@ public class Sistema implements Serializable{
      * @return Instancia estática Sistema.
      */
     public static Sistema getSistema(){
-        if (sistema==null) sistema = new Sistema();
+        if (sistema==null){
+            sistema = new Sistema();
+            cargarSistema();
+        }
         return sistema;        
     }
     
@@ -206,5 +222,13 @@ public class Sistema implements Serializable{
      */
     public Usuario getUsuarioConectado(){
         return usuarioConectado;
+    }
+    
+    public ArrayList<Usuario> getUsuarios (){
+        return alUsuarios;
+    }
+    
+    public ArrayList<Subforo> getSubforos (){
+        return alSubforos;
     }
 }

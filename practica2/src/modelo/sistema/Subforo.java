@@ -8,12 +8,19 @@ import modelo.entradas.EntradaGenerica;
 import modelo.usuario.Usuario;
 
 public class Subforo implements Subject, Serializable {
-    private int id;
     private String titulo;
     private ArrayList<Usuario> alUsuarios;
     private ArrayList<EntradaGenerica> alEntradas;
 
     public Subforo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
