@@ -1,8 +1,11 @@
 package modelo.entradas;
 
+import java.util.ArrayList;
 import modelo.usuario.Usuario;
 
 public class Entrada extends EntradaGenerica{
+    private ArrayList<EntradaGenerica> entradas = new ArrayList<EntradaGenerica>();
+    //Hay que usar este ArrayList para el Demostrador y las clases que creen/modifiquen/borren entradas para almacenarlas
     
     public Entrada(String titulo, String texto){
         super(titulo, texto);
@@ -45,9 +48,8 @@ public class Entrada extends EntradaGenerica{
         super.verificada = resultado;
     }
     @Override
-    public boolean comentar(String texto){
+    public void comentar(String texto){
         this.texto = texto;
-        return true;
     }
     @Override
     public boolean votar(Usuario usuario, boolean valor){

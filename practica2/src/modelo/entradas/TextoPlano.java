@@ -45,9 +45,8 @@ public class TextoPlano extends EntradaGenerica{
         super.verificada = resultado;
     }
     @Override
-    public boolean comentar(String texto){
+    public void comentar(String texto){
         this.texto = texto;
-        return true;
     }
     @Override
     public boolean votar(Usuario usuario, boolean valor){

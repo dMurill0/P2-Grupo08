@@ -27,7 +27,7 @@ public abstract class EntradaGenerica{
     abstract public int getPuntuacion();
     abstract public void setPuntuacion(int puntuacion);
     abstract public void verificar(boolean resultado);
-    abstract public boolean comentar(String texto);
+    abstract public void comentar(String texto);
     abstract public boolean votar(Usuario usuario,boolean valor);
 }
 
