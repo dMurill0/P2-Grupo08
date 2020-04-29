@@ -37,80 +37,25 @@ public class Profesor extends Usuario {
         return subforo;
     }
     
+    /**
+     *
+     * @param subforo recibe el objeto subforo al cual se le añadira la entrada
+     * @param titulo titulo de la entrada.
+     * @param texto texto de la entrada.
+     */
+    @Override
     public void crearEntrada(Subforo subforo, String titulo, String texto){
         
-        EntradaGenerica entrada = new Entrada(titulo, texto);
+        EntradaGenerica entrada1 = new Entrada(titulo, texto);
         
         System.out.println("Verificando entrada...");
-        administrador.verificarEntrada(entrada);
+        administrador.verificarEntrada(entrada1);
         
-        if(entrada.getVerificada()){
-            subforo.setAlEntradas(entrada);
+        if(entrada1.getVerificada()){
+            subforo.setAlEntradas(entrada1);
             System.out.println("La entrada ha sido verificada.");
         }else{
             System.out.println("No ha sido posible verificar la entrada.");
         }
     }
-
-    @Override
-    public String getEmail() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setEmail(String email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void crearEntrada(Subforo subforo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void crearComentario(Usuario usuario, EntradaGenerica entrada) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void votarEntrada(EntradaGenerica entrada, int puntuacion) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getNick() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setNick(String nick) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getPassword() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setPassword(String contraseña) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getRol() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setRol(String rol) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void recibirNotificacion(String notificacion) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
 }

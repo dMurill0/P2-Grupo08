@@ -5,11 +5,12 @@ import java.util.ArrayList;
 import modelo.Suscriptor;
 import modelo.entradas.Entrada;
 import modelo.entradas.EntradaGenerica;
+import modelo.sistema.Penalizacion;
 import modelo.sistema.Subforo;
 
 
 public abstract class Usuario implements Suscriptor{
-    
+    protected Penalizacion penalizacion;
     protected Entrada entrada;
     protected String nombre;
     protected String apellidos;
@@ -18,6 +19,7 @@ public abstract class Usuario implements Suscriptor{
     protected String email;
     protected String rol; //indicar en la creacion de usuario si es alumno,profesor o admin y comparar con equalsIgnoreCase
     protected ArrayList<String> notificaciones;
+    protected boolean estaPenalizado;
 
     public String getEmail() {
         return email;
@@ -34,38 +36,8 @@ public abstract class Usuario implements Suscriptor{
         this.contraseña = contraseña;
         this.email = email;
     }
-
-//    public abstract void crearEntrada(Subforo subforo);
-//    
-//    public abstract void crearComentario(Usuario usuario, EntradaGenerica entrada);
-//    
-//    public abstract void votarEntrada(EntradaGenerica entrada, int puntuacion);
-//    
-//    public abstract String getNick();
-//
-//    public abstract void setNick(String nick);
-//
-//    public abstract String getPassword();
-//
-//    public abstract void setPassword(String contraseña);
-//
-//    public abstract String getRol();
-//
-//    public abstract void setRol(String rol);
-//
-//    public abstract void recibirNotificacion(String notificacion);
-//
-//}
-    public void crearEntrada(Subforo subforo){
-        
-    }
     
-    public void crearComentario(Usuario usuario, EntradaGenerica entrada){
-        
-//        if(entrada.crearEntrada()){
-            //Se crea la entrada con su texto
-//        } 
-    }
+    public abstract void crearEntrada(Subforo subforo, String titulo, String texto);
     
     public void votarEntrada(EntradaGenerica entrada, int puntuacion){
         entrada.setPuntuacion(puntuacion);
@@ -95,6 +67,11 @@ public abstract class Usuario implements Suscriptor{
         this.rol = rol;
     }
 
+    public void mostrarNotificaciones(){
+        for(int i = 0;i<notificaciones.size();i++){
+            System.out.println(notificaciones.get(i));
+        }
+    }
     @Override
     public void recibirNotificacion(String notificacion) {
         this.notificaciones.add(notificacion);
