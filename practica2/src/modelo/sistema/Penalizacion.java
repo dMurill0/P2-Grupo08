@@ -1,26 +1,26 @@
 package modelo.sistema;
 
-import java.util.Calendar;
-
 
 public class Penalizacion{
     
-    private Calendar fechaInicio;
-    private Calendar fechaFinalizacion;
-
-    public Calendar getFechaInicio() {
-        return fechaInicio;
+    private boolean tienePenalizacion = false;
+    private int diasPenalizacion;
+    
+    public Penalizacion(int dias) {
+	diasPenalizacion = dias;
+        tienePenalizacion = true;
     }
-
-    public void setFechaInicio(Calendar fechaInicio) {
-        this.fechaInicio = fechaInicio;
+	
+    public boolean estaPenalizado() {
+	return tienePenalizacion;
     }
-
-    public Calendar getFechaFinalizacion() {
-        return fechaFinalizacion;
+	
+    public void avanzarDias(int dias) {
+	diasPenalizacion -= dias;
+	if(diasPenalizacion < 0) {
+            diasPenalizacion = 0;
+            tienePenalizacion = false;
+        }
     }
-
-    public void setFechaFinalizacion(Calendar fechaFinalizacion) {
-        this.fechaFinalizacion = fechaFinalizacion;
-    }
+    
 }

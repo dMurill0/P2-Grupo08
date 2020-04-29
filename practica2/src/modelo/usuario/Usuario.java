@@ -10,7 +10,7 @@ import modelo.sistema.Subforo;
 
 
 public abstract class Usuario implements Suscriptor{
-    protected Penalizacion penalizacion;
+    //protected Penalizacion penalizacion;
     protected Entrada entrada;
     protected String nombre;
     protected String apellidos;

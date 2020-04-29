@@ -1,6 +1,5 @@
 package modelo.usuario;
 
-import java.util.Calendar;
 import modelo.entradas.EntradaGenerica;
 import modelo.sistema.Subforo;
 
@@ -12,17 +11,10 @@ public class Administrador extends Usuario{
     }
     
     //establecer fecha de la penalizacion y sumarle dos dia(fin del ban) luego comparar esa fecha en estaPenalizado
-    public void penalizar(Usuario usuario, int diasPenalizacion){
-        
+    public void penalizar(Usuario usuario, int diasPenalizacion){  
         if(usuario instanceof Alumno){
-            
-            usuario.penalizacion.setFechaInicio(Calendar.getInstance());
-            Calendar fechaFin = Calendar.getInstance();
-            fechaFin.add(Calendar.DATE, diasPenalizacion);
-            usuario.penalizacion.setFechaFinalizacion(fechaFin);
-            
+            ((Alumno) usuario).penalizar(diasPenalizacion);
         }
-  
     }
     
     //Este metodo simplemente verifica la entrada
