@@ -10,8 +10,14 @@ public class Comentario {
     private int puntuacion;
     private ArrayList<String> respuestas;
     
-    public void comentar(String texto){
-        this.respuestas.add("texto");
+    public Comentario(String comentario){
+        this.comentario = comentario;
+    }
+    
+    public Comentario comentar(String texto){
+        Comentario comentario = new Comentario(texto);
+        this.respuestas.add(comentario);
+        return comentario;
     }
 }
 
