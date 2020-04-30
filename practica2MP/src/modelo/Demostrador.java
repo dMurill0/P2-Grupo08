@@ -277,9 +277,9 @@ public class Demostrador {
         }
         System.out.println();
         System.out.println("*SUBFOROS: ");
-        for (Subforo aux : sistema.getSubforos()){
+        for(Subforo aux : sistema.getSubforos()){
             System.out.println("Titulo: " + aux.getTitulo());
-            for (EntradaGenerica auxEntrada : aux.getAlEntradas()){
+            for(EntradaGenerica auxEntrada : aux.getAlEntradas()){
                 System.out.println("**Entrada: " + auxEntrada.getTitulo() + " -- " + auxEntrada.getPuntuacion());
             }
         }

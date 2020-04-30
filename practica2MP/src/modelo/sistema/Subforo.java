@@ -13,6 +13,8 @@ public class Subforo implements Subject, Serializable {
 
     public Subforo(String titulo) {
         this.titulo = titulo;
+        this.alEntradas = new ArrayList<>();
+        this.alUsuarios = new ArrayList<>();
     }
 
     public String getTitulo() {

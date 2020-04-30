@@ -34,6 +34,10 @@ public class Sistema implements Serializable{
         alSubforos = new ArrayList<Subforo>();
     }
     
+    public void anadirSubforo(Subforo subforo){
+        this.alSubforos.add(subforo);
+    }
+    
     /**
      * Comprueba si el usuario recibido existe en la BD y coinciden sus credenciales.
      * 
