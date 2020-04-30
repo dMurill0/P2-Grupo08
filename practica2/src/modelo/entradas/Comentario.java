@@ -8,17 +8,16 @@ public class Comentario {
     
     private String comentario;
     private int puntuacion;
-    private ArrayList<Comentario> respuestas;
+    private ArrayList<String> respuestas;
     
-    public Comentario comentar(Comentario comentario, ArrayList<Comentario> respuestas){
-        respuestas.add(comentario);
-        return comentario;
+    public void comentar(String texto){
+        this.respuestas.add("texto");
     }
 }
 
     //falta comprobar si esta logueado para poder votar
 
-    public boolean votar(Usuario usuario, boolean valor){
+    public boolean votar(Usuario usuario, boolean valor, int votado){
         if(!this.votado){//Si votado es igual a null
             super.votoUsuarios.add(usuario);
             this.votado = valor;//Si el valor que recibe es true es voto positivo y viceversa
