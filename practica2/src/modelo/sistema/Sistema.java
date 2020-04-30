@@ -201,6 +201,19 @@ public class Sistema implements Serializable{
         return subforo;
     }
     
+    public void avanzarDias(int dias){
+        for (Usuario usuario : alUsuarios){
+            if (usuario instanceof Alumno){
+                Penalizacion penalizacion = usuario.getPenalizacion();
+                if (penalizacion.estaPenalizado()){
+                    penalizacion.setDiasPenalizado(penalizacion.getDiasPenalizado()-dias);
+                    if (penalizacion.getDiasPenalizado()<0) penalizacion.setDiasPenalizado(0);
+                    if (penalizacion.getDiasPenalizado()==0) penalizacion.setTienePenalizacion(false);
+                }
+            }
+        }
+    }
+    
     /************* Getters and Setter *************/
     /**
      * Devuelve la instancia estática de Sistema.

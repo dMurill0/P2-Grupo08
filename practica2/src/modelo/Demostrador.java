@@ -1,6 +1,5 @@
 package modelo;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import modelo.entradas.Comentario;
@@ -130,7 +129,7 @@ public class Demostrador {
         System.out.println("Se intenta crear un subforo con un usuario Profesor.");
         logout();
         sistema.login("Margui", "123");
-        Usuario usuario = sistema.getUsuarioConectado();
+        usuario = sistema.getUsuarioConectado();
         if (usuario instanceof Profesor) {
             subforo = sistema.crearSubforo("Subforo1");
             System.out.println("El subforo se creó correctamente.");
@@ -138,8 +137,8 @@ public class Demostrador {
         return subforo;
     }
     
-    private static Entrada creacionEntrada(Subforo subforo){
-        Entrada entrada = null;
+    private static EntradaGenerica creacionEntrada(Subforo subforo){
+        EntradaGenerica entrada = null;
         System.out.println("Se intenta crear una entrada sin haber iniciado sesión");
         logout();
         Usuario usuario = sistema.getUsuarioConectado();
@@ -173,6 +172,8 @@ public class Demostrador {
                 System.out.println("El administrador penalizó al usuario.");
             }
         }
+        
+        return entrada;
     }
     
     private static void notificarUsuarios(Subforo subforo){

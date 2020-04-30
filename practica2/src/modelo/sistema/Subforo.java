@@ -3,7 +3,6 @@ package modelo.sistema;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import modelo.entradas.Entrada;
 import modelo.entradas.EntradaGenerica;
 import modelo.usuario.Usuario;
 
