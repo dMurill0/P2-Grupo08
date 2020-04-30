@@ -8,11 +8,11 @@ public class Comentario {
     
     private String comentario;
     private int puntuacion;
-    private ArrayList<String> respuestas;
+    private ArrayList<Comentario> respuestas;
     
-    public void comentar(String texto, ArrayList<String> respuestas){
-        this.comentario = texto;
-        respuestas.add(texto);
+    public Comentario comentar(Comentario comentario, ArrayList<Comentario> respuestas){
+        respuestas.add(comentario);
+        return comentario;
     }
 }
 
