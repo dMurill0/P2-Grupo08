@@ -7,7 +7,7 @@ public abstract class EntradaGenerica{
     protected String titulo;
     protected String texto;
     protected boolean verificada = false;
-    protected boolean votado;
+    protected int votado;
     protected int puntuacion;
     //protected int valorVoto;
     //protected HashMap<, boolean> hmap = new HashMap<>();
@@ -28,6 +28,6 @@ public abstract class EntradaGenerica{
     abstract public void setPuntuacion(int puntuacion);
     abstract public void verificar(boolean resultado);
     abstract public void comentar(String texto);
-    abstract public boolean votar(Usuario usuario,boolean valor);
+    abstract public boolean votar(Usuario usuario,int valor);
 }
 

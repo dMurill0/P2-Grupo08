@@ -52,8 +52,8 @@ public class Entrada extends EntradaGenerica{
         this.texto = texto;
     }
     @Override
-    public boolean votar(Usuario usuario, boolean valor){
-        if(!this.votado){//Si votado es igual a null
+    public boolean votar(Usuario usuario, int valor){
+        if(this.votado == 0){//Si votado es igual a null o a 0 si es tipo int 
             super.votoUsuarios.add(usuario);
             this.votado = valor;//Si el valor que recibe es true es voto positivo y viceversa
             return true;
