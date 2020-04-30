@@ -10,9 +10,10 @@ public class Alumno extends Usuario{
     private Administrador administrador;
     private Penalizacion penaliz;
     
-    public Alumno(String nombre, String apellidos, String nick, String contraseña, String email) {
+    public Alumno(String nombre, String apellidos, String nick, String contraseña, String email, Penalizacion penalizacion) {
         super(nombre, apellidos, nick, contraseña, email);
         super.setRol("alumno");
+        this.penaliz = new Penalizacion();
     }
     
     public boolean penalizar(int dias){

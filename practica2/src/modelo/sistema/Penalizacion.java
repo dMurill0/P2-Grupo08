@@ -6,6 +6,10 @@ public class Penalizacion{
     private boolean tienePenalizacion = false;
     private int diasPenalizacion;
     
+    
+    public Penalizacion(){
+        this.tienePenalizacion = false;
+    }
     public Penalizacion(int dias) {
 	diasPenalizacion = dias;
         tienePenalizacion = true;
