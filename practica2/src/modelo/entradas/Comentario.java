@@ -8,7 +8,7 @@ public class Comentario {
     
     private String comentario;
     private int puntuacion;
-    private ArrayList<String> respuestas;
+    private ArrayList<Comentario> respuestas;
     
     public Comentario(String comentario){
         this.comentario = comentario;
