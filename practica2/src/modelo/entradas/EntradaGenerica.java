@@ -6,7 +6,7 @@ import modelo.usuario.Usuario;
 public abstract class EntradaGenerica{
     protected String titulo;
     protected String texto;
-    protected boolean verificada;
+    protected boolean verificada = false;
     protected boolean votado;
     protected int puntuacion;
     //protected int valorVoto;
