@@ -10,14 +10,15 @@ public class Comentario {
     private int puntuacion;
     private ArrayList<String> respuestas;
     
-    public void comentar(String texto){
+    public void comentar(String texto, ArrayList<String> respuestas){
         this.comentario = texto;
+        respuestas.add(texto);
     }
 }
 
     //falta comprobar si esta logueado para poder votar
 
-    /*public boolean votar(Usuario usuario, boolean valor){
+    public boolean votar(Usuario usuario, boolean valor){
         if(!this.votado){//Si votado es igual a null
             super.votoUsuarios.add(usuario);
             this.votado = valor;//Si el valor que recibe es true es voto positivo y viceversa
@@ -33,5 +34,5 @@ public class Comentario {
                     return true;
                 }
         }
-    }*/
+    }
 
