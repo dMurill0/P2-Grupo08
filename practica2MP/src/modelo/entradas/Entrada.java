@@ -1,0 +1,76 @@
+package modelo.entradas;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import modelo.usuario.Usuario;
+
+public class Entrada extends EntradaGenerica implements Serializable{
+    private ArrayList<EntradaGenerica> entradas = new ArrayList<EntradaGenerica>();
+    //Hay que usar este ArrayList para el Demostrador y las clases que creen/modifiquen/borren entradas para almacenarlas
+    
+    public Entrada(String titulo, String texto){
+        super(titulo, texto);
+    }
+    
+    public Comentario comentar(String texto){
+        Comentario comentario = new Comentario(texto);
+        alComentarios.add(comentario);
+        return comentario;
+    }
+    
+    @Override
+    public String getTitulo(){
+        return titulo;
+    }
+    @Override
+    public void setTitulo(String titulo){
+        this.titulo = titulo;
+    }
+    @Override
+    public String getTexto(){
+        return texto;
+    }
+    @Override
+    public void setTexto(String texto){
+        this.texto = texto;
+    }
+    @Override
+    public boolean getVerificada() {
+        return this.verificada;
+    }
+    @Override
+    public void setVerificada(boolean verificada){
+        this.verificada = verificada;
+    }
+    @Override
+    public int getPuntuacion(){
+        return this.puntuacion;
+    }
+    @Override
+    public void setPuntuacion(int puntuacion){
+        this.puntuacion = puntuacion;
+    }
+    @Override
+    public void verificar(boolean resultado){
+        super.verificada = resultado;
+    }
+    
+    @Override
+    public boolean votar(Usuario usuario, boolean valor){
+        if(!this.votado){//Si votado es igual a null
+            super.votoUsuarios.add(usuario);
+            this.votado = valor;//Si el valor que recibe es true es voto positivo y viceversa
+            return true;
+        }else{
+            if(this.votado == valor){
+                //Esto es cuando ha vuelto a votar lo mismo
+                return false;
+            }else{
+                //Esto para cuando se cambia de positivo a negativo o viceversa
+                    this.votado = valor;
+                    super.votoUsuarios.add(usuario);
+                    return true;
+                }
+        }
+    }
+}
