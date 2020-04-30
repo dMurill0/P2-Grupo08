@@ -1,5 +1,6 @@
 package modelo.usuario;
 
+import modelo.entradas.Comentario;
 import modelo.entradas.EntradaGenerica;
 import modelo.sistema.Subforo;
 
@@ -28,6 +29,11 @@ public class Administrador extends Usuario{
     @Override
     public EntradaGenerica crearEntrada(Subforo subforo, String titulo, String texto) {
         throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
+    @Override
+    public Comentario crearComentario(String texto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

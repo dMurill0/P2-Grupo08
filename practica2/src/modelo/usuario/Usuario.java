@@ -3,6 +3,7 @@ package modelo.usuario;
 
 import java.util.ArrayList;
 import modelo.Suscriptor;
+import modelo.entradas.Comentario;
 import modelo.entradas.Entrada;
 import modelo.entradas.EntradaGenerica;
 import modelo.sistema.Penalizacion;
@@ -44,6 +45,8 @@ public abstract class Usuario implements Suscriptor{
      * @return devuelve el objeto Enrada creado
      */
     public abstract EntradaGenerica crearEntrada(Subforo subforo, String titulo, String texto);
+    public abstract Comentario crearComentario(String texto);
+    
     
     public void votarEntrada(EntradaGenerica entrada, int puntuacion){
         entrada.setPuntuacion(puntuacion);

@@ -1,5 +1,6 @@
 package modelo.usuario;
 
+import modelo.entradas.Comentario;
 import modelo.entradas.EntradaGenerica;
 import modelo.entradas.TextoPlano;
 import modelo.sistema.Penalizacion;
@@ -45,14 +46,12 @@ public class Alumno extends Usuario{
         EntradaGenerica textoPlano = new TextoPlano(titulo, texto);
         subforo.setAlEntradas(textoPlano);
         return textoPlano;  
-//        administrador.verificarEntrada(textoPlano);
-//        
-//        if(textoPlano.getVerificada()){
-//            subforo.setAlEntradas(textoPlano);
-//            System.out.println("La entrada ha sido verificada.");
-//        }else{
-//            System.out.println("No ha sido posible verificar la entrada.");
-//        }
+        
+    }
+    @Override
+    public Comentario crearComentario(String texto){
+        Comentario coment = new Comentario(texto);
+        return coment;  
         
     }
 }

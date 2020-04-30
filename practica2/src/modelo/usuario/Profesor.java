@@ -1,5 +1,6 @@
 package modelo.usuario;
 
+import modelo.entradas.Comentario;
 import modelo.entradas.Ejercicio;
 import modelo.entradas.Encuesta;
 import modelo.entradas.Entrada;
@@ -54,5 +55,11 @@ public class Profesor extends Usuario {
 //            System.out.println("No ha sido posible verificar la entrada.");
 //        }
 
+    }
+    @Override
+    public Comentario crearComentario(String texto){
+        Comentario coment = new Comentario(texto);
+        return coment;  
+        
     }
 }
