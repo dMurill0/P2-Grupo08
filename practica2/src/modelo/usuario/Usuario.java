@@ -19,7 +19,6 @@ public abstract class Usuario implements Suscriptor{
     protected String email;
     protected String rol; //indicar en la creacion de usuario si es alumno,profesor o admin y comparar con equalsIgnoreCase
     protected ArrayList<String> notificaciones;
-    protected boolean estaPenalizado;
 
     public String getEmail() {
         return email;
@@ -37,7 +36,14 @@ public abstract class Usuario implements Suscriptor{
         this.email = email;
     }
     
-    public abstract void crearEntrada(Subforo subforo, String titulo, String texto);
+    /**
+     *
+     * @param subforo Añade la entrada creada al subforo
+     * @param titulo Añade el titulo a la entrada
+     * @param texto Añade el texto a la entrada
+     * @return devuelve el objeto Enrada creado
+     */
+    public abstract EntradaGenerica crearEntrada(Subforo subforo, String titulo, String texto);
     
     public void votarEntrada(EntradaGenerica entrada, int puntuacion){
         entrada.setPuntuacion(puntuacion);

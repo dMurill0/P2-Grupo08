@@ -31,17 +31,18 @@ public class Alumno extends Usuario{
     
     
     @Override
-    public void crearEntrada(Subforo subforo, String titulo, String texto){
+    public EntradaGenerica crearEntrada(Subforo subforo, String titulo, String texto){
         EntradaGenerica textoPlano = new TextoPlano(titulo, texto);
+        subforo.setAlEntradas(textoPlano);
+        return textoPlano;  
+//        administrador.verificarEntrada(textoPlano);
+//        
+//        if(textoPlano.getVerificada()){
+//            subforo.setAlEntradas(textoPlano);
+//            System.out.println("La entrada ha sido verificada.");
+//        }else{
+//            System.out.println("No ha sido posible verificar la entrada.");
+//        }
         
-        System.out.println("Verificando entrada...");
-        administrador.verificarEntrada(textoPlano);
-        
-        if(textoPlano.getVerificada()){
-            subforo.setAlEntradas(textoPlano);
-            System.out.println("La entrada ha sido verificada.");
-        }else{
-            System.out.println("No ha sido posible verificar la entrada.");
-        }
     }
 }

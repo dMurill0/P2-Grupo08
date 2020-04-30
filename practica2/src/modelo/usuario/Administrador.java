@@ -18,25 +18,15 @@ public class Administrador extends Usuario{
     }
     
     //Este metodo simplemente verifica la entrada
-    public void verificarEntrada(EntradaGenerica entrada){
+    public boolean verificarEntrada(EntradaGenerica entrada){
         
         entrada.verificar(true);
         
-//        Scanner myObj = new Scanner(System.in);
-//        System.out.println("¿Desea verificar la entrada? Y/N");
-//        String input = myObj.nextLine();
-//        if(input.equals("Y")){
-//            entrada.verificar(true);
-//            System.out.println("Titulo: "+ entrada.getTitulo());
-//            System.out.println("Texto : "+ entrada.getTexto());
-//        }else{            
-//            entrada.verificar(false);
-//        }
-//        return input.equals("Y"); 
+        return true;
     }
 
     @Override
-    public void crearEntrada(Subforo subforo, String titulo, String texto) {
+    public EntradaGenerica crearEntrada(Subforo subforo, String titulo, String texto) {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
     

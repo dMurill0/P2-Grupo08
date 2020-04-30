@@ -14,13 +14,23 @@ public class Penalizacion{
     public boolean estaPenalizado() {
 	return tienePenalizacion;
     }
-	
-    public void avanzarDias(int dias) {
-	diasPenalizacion -= dias;
-	if(diasPenalizacion < 0) {
-            diasPenalizacion = 0;
-            tienePenalizacion = false;
-        }
+
+    public boolean isTienePenalizacion() {
+        return tienePenalizacion;
     }
+
+    public void setTienePenalizacion(boolean tienePenalizacion) {
+        this.tienePenalizacion = tienePenalizacion;
+    }
+
+    public int getDiasPenalizacion() {
+        return diasPenalizacion;
+    }
+
+    public void setDiasPenalizacion(int diasPenalizacion) {
+        this.diasPenalizacion = diasPenalizacion;
+    }
+    
+    
     
 }
