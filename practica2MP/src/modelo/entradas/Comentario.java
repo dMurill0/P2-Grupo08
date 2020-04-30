@@ -16,6 +16,9 @@ public class Comentario implements Serializable{
     
     public Comentario(String comentario){
         this.comentario = comentario;
+        this.respuestas = new ArrayList<>();
+        this.alUsVotacion = new ArrayList<>();
+        this.alIntVotacion = new ArrayList<>();
     }
     
     public Comentario comentar(String texto){
