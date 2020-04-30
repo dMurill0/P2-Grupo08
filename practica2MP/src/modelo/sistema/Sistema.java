@@ -52,6 +52,14 @@ public class Sistema implements Serializable{
                         return true;
                     }   
                 }
+                else {
+                    if (usuario instanceof Profesor){
+                        Profesor profesor = (Profesor) usuario;                      
+                            usuarioConectado = usuario;
+                            usuarioConectado.mostrarNotificaciones();
+                            return true;                        
+                    }                  
+                }
             }
         }
         return false;
