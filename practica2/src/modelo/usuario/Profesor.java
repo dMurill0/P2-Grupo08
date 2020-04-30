@@ -37,25 +37,22 @@ public class Profesor extends Usuario {
         return subforo;
     }
     
-    /**
-     *
-     * @param subforo recibe el objeto subforo al cual se le añadira la entrada
-     * @param titulo titulo de la entrada.
-     * @param texto texto de la entrada.
-     */
     @Override
-    public void crearEntrada(Subforo subforo, String titulo, String texto){
+    public EntradaGenerica crearEntrada(Subforo subforo, String titulo, String texto){
         
         EntradaGenerica entrada1 = new Entrada(titulo, texto);
+        subforo.setAlEntradas(entrada1);
+        return entrada1;
         
-        System.out.println("Verificando entrada...");
-        administrador.verificarEntrada(entrada1);
-        
-        if(entrada1.getVerificada()){
-            subforo.setAlEntradas(entrada1);
-            System.out.println("La entrada ha sido verificada.");
-        }else{
-            System.out.println("No ha sido posible verificar la entrada.");
-        }
+//        System.out.println("Verificando entrada...");
+//        administrador.verificarEntrada(entrada1);
+//        
+//        if(entrada1.getVerificada()){
+//            subforo.setAlEntradas(entrada1);
+//            System.out.println("La entrada ha sido verificada.");
+//        }else{
+//            System.out.println("No ha sido posible verificar la entrada.");
+//        }
+
     }
 }
