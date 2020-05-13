@@ -11,7 +11,7 @@ public class TextoPlano extends EntradaGenerica implements Serializable{
     
     @Override
     public String getTitulo(){
-        return titulo;
+        return this.titulo;
     }
     @Override
     public void setTitulo(String titulo){
@@ -19,7 +19,7 @@ public class TextoPlano extends EntradaGenerica implements Serializable{
     }
     @Override
     public String getTexto(){
-        return texto;
+        return this.texto;
     }
     @Override
     public void setTexto(String texto){

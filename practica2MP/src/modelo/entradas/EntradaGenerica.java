@@ -18,6 +18,7 @@ public abstract class EntradaGenerica implements Serializable{
     
     public EntradaGenerica(String titulo, String texto){
         this.titulo = titulo;
+        this.texto = texto;
         this.votoUsuarios = new ArrayList<>();
         this.alComentarios = new ArrayList<>();
 

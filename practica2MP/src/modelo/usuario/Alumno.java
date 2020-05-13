@@ -36,8 +36,8 @@ public class Alumno extends Usuario implements Serializable{
         
     }
 
-    public boolean estaPenalizado(){ //comparar las fechas de inicio y fin de la clase Penalizacion con la actual     
-        return (this.penaliz.estaPenalizado());
+    public boolean estaPenalizado(){ //comparar las fechas de inicio y fin de la clase Penalizacion con la actual
+        return this.penaliz.getDiasPenalizacion() > 0;
     }  
     
     
