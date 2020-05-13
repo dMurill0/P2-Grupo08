@@ -50,21 +50,4 @@ public class ProfesorTest {
         Administrador admin1 = new Administrador("Pepe","Sanjuán","Pepito","123456","pepe.sanjuan@alumnos.urjc.es");
         assertTrue(admin1.verificarEntrada(textoPlano));
     }
-
-    /**
-     * Test of crearSubfboro method, of class Profesor.
-     */
-    @Test
-    public void testCrearSubfboro() {
-        
-    }
-
-    /**
-     * Test of crearEntrada method, of class Profesor.
-     */
-    @Test
-    public void testCrearEntrada() {
-        
-    }
-    
 }

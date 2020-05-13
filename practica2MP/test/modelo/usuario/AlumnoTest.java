@@ -17,24 +17,6 @@ import static org.junit.Assert.*;
  * @author sergiomartin
  */
 public class AlumnoTest {
-    
-    public AlumnoTest() {
-    }
-
-    /**
-     * Test of getPenaliz method, of class Alumno.
-     */
-    @Test
-    public void testGetPenaliz() {
-        
-    }
-
-    /**
-     * Test of setPenaliz method, of class Alumno.
-     */
-    @Test
-    public void testSetPenaliz() {
-    }
 
     /**
      * Test of penalizar method, of class Alumno.
@@ -46,17 +28,6 @@ public class AlumnoTest {
         alumno1.setPenaliz(penaliz);
         assertTrue(alumno1.estaPenalizado());
     }
-
-    /**
-     * Test of estaPenalizado method, of class Alumno.
-     */
-    @Test
-    public void testEstaPenalizado() {
-    }
-
-    /**
-     * Test of crearEntrada method, of class Alumno.
-     */
     @Test
     public void testCrearEntrada() {
         EntradaGenerica textoPlano = new TextoPlano("Titulo", "Texto");

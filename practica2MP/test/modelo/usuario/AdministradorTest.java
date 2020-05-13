@@ -24,7 +24,7 @@ public class AdministradorTest {
         Alumno alumno2 = new Alumno("Pepe","Sanjuán","Pepito","123456","pepe.sanjuan@alumnos.urjc.es");
         alumno2.getPenaliz().setDiasPenalizacion(2);
         assertEquals(alumno1.getPenaliz().getDiasPenalizacion(),
-                alumno2.getPenaliz().getDiasPenalizacion());
+        alumno2.getPenaliz().getDiasPenalizacion());
     }
 
     /**
@@ -36,14 +36,6 @@ public class AdministradorTest {
         Administrador admin1 = new Administrador("Pepe","Sanjuán","Pepito","123456","pepe.sanjuan@alumnos.urjc.es");
         assertFalse(admin1.verificarEntrada(entrada));
         
-        
-    }
-
-    /**
-     * Test of crearEntrada method, of class Administrador.
-     */
-    @Test
-    public void testCrearEntrada() {
         
     }
     

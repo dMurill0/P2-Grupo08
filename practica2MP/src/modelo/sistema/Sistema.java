@@ -8,10 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
 import modelo.entradas.Entrada;
 import modelo.usuario.Alumno;
 import modelo.usuario.Profesor;
@@ -29,7 +27,10 @@ public class Sistema implements Serializable{
     /**
      * CONSTRUCTOR. Inicializa ArrayList<Usuario> y ArrayList<Subforo>
      */
-    private Sistema (){
+    
+    //El constructor de sistema se ha modificado a publico 
+    //para poder realizar los tests
+    public Sistema (){
         alUsuarios = new ArrayList<Usuario>();
         alSubforos = new ArrayList<Subforo>();
     }
