@@ -12,7 +12,8 @@ import org.junit.runners.Suite.SuiteClasses;
     EjercicioTest.class,
     EncuestaTest.class,
     EntradaTest.class,
-    TextoPlanoTest.class
+    TextoPlanoTest.class,
+    SistemaTest.class
 })
 
 
