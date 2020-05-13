@@ -12,6 +12,10 @@ public class Comentario implements Serializable{
     private ArrayList<Comentario> respuestas;
     private ArrayList<Usuario> alUsVotacion;
     private ArrayList<Boolean> alIntVotacion;
+
+    public String getComentario() {
+        return comentario;
+    }
     
     
     public Comentario(String comentario){
@@ -19,6 +23,10 @@ public class Comentario implements Serializable{
         this.respuestas = new ArrayList<>();
         this.alUsVotacion = new ArrayList<>();
         this.alIntVotacion = new ArrayList<>();
+    }
+
+    Comentario(String titulo, String texto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public Comentario comentar(String texto){
