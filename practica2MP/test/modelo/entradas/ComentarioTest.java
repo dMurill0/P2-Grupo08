@@ -6,7 +6,12 @@
 package modelo.entradas;
 
 import org.junit.Test;
+
+import modelo.usuario.Usuario;
+
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -18,8 +23,11 @@ public class ComentarioTest {
      */
     @Test
     public void testComentar(){
-        
-        
+        String texto = "Texto";
+        ArrayList <> respuestas = new ArrayList<Comentario>();
+        respuestas.add(texto);
+        int n = respuestas.size();
+        assertEquals(respuestas.get(n), texto);
     }
 
     /**
@@ -27,6 +35,13 @@ public class ComentarioTest {
      */
     @Test
     public void testVotar() {
+        Usuario alumno = new Usuario();
+        Comentario comentario = new Comentario();
+        Boolean valor = true;
+        int puntuacion = 1;
+        alumno.votarEntrada(comentario, puntuacion);
+        assertFalse(comentario.votar(usuario, valor));
+
     }
     
 }
