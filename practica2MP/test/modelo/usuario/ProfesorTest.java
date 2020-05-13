@@ -9,7 +9,6 @@ import modelo.entradas.Ejercicio;
 import modelo.entradas.Encuesta;
 import modelo.entradas.EntradaGenerica;
 import modelo.entradas.TextoPlano;
-import modelo.sistema.Subforo;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
